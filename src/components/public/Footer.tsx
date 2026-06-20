@@ -62,7 +62,7 @@ export default function Footer({ settings }: FooterProps) {
               {['Services', 'About Us', 'Book a Repair', 'Admin Login'].map((item) => (
                 <li key={item}>
                   <a
-                    href={item === 'Admin Login' ? '/admin' : `#${item.toLowerCase().replace(/ /g, '-')}`}
+                    href={item === 'Admin Login' ? '/#/admin' : `#${item.toLowerCase().replace(/ /g, '-')}`}
                     className="text-sm transition-colors"
                     style={{ color: '#7a8ba6' }}
                     onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#e8621a')}

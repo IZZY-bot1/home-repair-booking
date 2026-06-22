@@ -6,27 +6,29 @@ import type { Service } from '../../lib/types'
 interface ServicesProps {
   services: Service[]
   loading: boolean
+  content: Record<string, string>
   onBook: (service: Service) => void
 }
 
-export default function Services({ services, loading, onBook }: ServicesProps) {
+export default function Services({ services, loading, content, onBook }: ServicesProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const badge = content.badge_text || 'What We Fix'
+  const title = content.title || 'Professional Home Repair Services'
+  const subtitle = content.subtitle || 'From quick fixes to complex repairs, our licensed technicians handle every job with care, precision, and a satisfaction guarantee.'
 
   return (
     <section id="services" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-brand-50 text-brand-500 rounded-full px-4 py-1.5 text-sm font-600 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
-            What We Fix
+            {badge}
           </div>
           <h2 className="text-4xl sm:text-5xl font-800 text-navy-800 tracking-tight mb-4">
-            Professional Home Repair{' '}
-            <span className="text-gradient-brand">Services</span>
+            {title}
           </h2>
           <p className="text-warm-300 text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#8a7f76' }}>
-            From quick fixes to complex repairs, our licensed technicians handle every job with care, precision, and a satisfaction guarantee.
+            {subtitle}
           </p>
         </div>
 

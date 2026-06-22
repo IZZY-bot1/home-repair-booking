@@ -3,14 +3,18 @@ import type { BusinessSettings } from '../../lib/types'
 
 interface FooterProps {
   settings: BusinessSettings | null
+  content: Record<string, string>
 }
 
-export default function Footer({ settings }: FooterProps) {
+export default function Footer({ settings, content }: FooterProps) {
   const businessName = settings?.business_name || 'FixRight Home Repair'
   const email = settings?.business_email || ''
   const phone = settings?.business_phone || ''
   const address = settings?.business_address || ''
   const year = new Date().getFullYear()
+  const tagline = content.tagline || 'Reliable, professional home repair and maintenance services for homeowners. Trusted by thousands of families.'
+  const ctaHeadline = content.cta_headline || "Need a repair? We're just a booking away."
+  const ctaButton = content.cta_button || 'Schedule Now'
 
   return (
     <footer style={{ background: '#0f1829' }}>
@@ -18,10 +22,10 @@ export default function Footer({ settings }: FooterProps) {
       <div style={{ background: '#e8621a' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white font-700 text-lg tracking-tight">
-            Need a repair? We're just a booking away.
+            {ctaHeadline}
           </p>
           <a href="#booking" className="btn-secondary text-sm shrink-0 py-2.5 px-6">
-            Schedule Now
+            {ctaButton}
           </a>
         </div>
       </div>
@@ -38,7 +42,7 @@ export default function Footer({ settings }: FooterProps) {
               <span className="text-white font-700 text-lg">{businessName}</span>
             </div>
             <p className="text-sm leading-relaxed mb-6" style={{ color: '#7a8ba6' }}>
-              Reliable, professional home repair and maintenance services for homeowners. Trusted by thousands of families.
+              {tagline}
             </p>
             <div className="flex items-center gap-3">
               {[Globe, MessageCircle, Share2].map((Icon, i) => (

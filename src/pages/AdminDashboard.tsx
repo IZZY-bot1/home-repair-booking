@@ -9,6 +9,7 @@ import ServicesPage from './admin/ServicesPage'
 import BusinessHoursPage from './admin/BusinessHoursPage'
 import BlockedDatesPage from './admin/BlockedDatesPage'
 import BusinessSettingsPage from './admin/BusinessSettingsPage'
+import PageBuilderPage from './admin/PageBuilderPage'
 
 type AuthState = 'loading' | 'unauthenticated' | 'unauthorized' | 'authorized'
 
@@ -296,6 +297,7 @@ export default function AdminDashboard() {
         <Route path="services" element={<ServicesPage />} />
         <Route path="business-hours" element={<BusinessHoursPage />} />
         <Route path="blocked-dates" element={<BlockedDatesPage />} />
+        <Route path="page-builder" element={<PageBuilderPage />} />
         <Route path="settings" element={<BusinessSettingsPage />} />
       </Route>
     </Routes>

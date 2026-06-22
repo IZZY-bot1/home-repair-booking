@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Save, Loader2, CheckCircle2, AlertCircle, Building2, Mail, Phone, MapPin, Clock, Calendar } from 'lucide-react'
+import { Save, Loader2, CheckCircle2, AlertCircle, Building2, Calendar } from 'lucide-react'
 import { supabase } from '../../lib/supabase'
 import type { BusinessSettings } from '../../lib/types'
 
@@ -136,58 +136,46 @@ export default function BusinessSettingsPage() {
               <label className="block text-sm font-600 text-gray-700 mb-1.5">
                 Company Name *
               </label>
-              <div className="relative">
-                <Building2 size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input
-                  type="text"
-                  className="admin-input pl-9"
-                  placeholder="FixRight Home Repair"
-                  value={form.business_name}
-                  onChange={(e) => update('business_name', e.target.value)}
-                />
-              </div>
+              <input
+                type="text"
+                className="admin-input"
+                placeholder="FixRight Home Repair"
+                value={form.business_name}
+                onChange={(e) => update('business_name', e.target.value)}
+              />
             </div>
 
             <div>
               <label className="block text-sm font-600 text-gray-700 mb-1.5">Company Email</label>
-              <div className="relative">
-                <Mail size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input
-                  type="email"
-                  className="admin-input pl-9"
-                  placeholder="hello@yourcompany.com"
-                  value={form.business_email}
-                  onChange={(e) => update('business_email', e.target.value)}
-                />
-              </div>
+              <input
+                type="email"
+                className="admin-input"
+                placeholder="hello@yourcompany.com"
+                value={form.business_email}
+                onChange={(e) => update('business_email', e.target.value)}
+              />
             </div>
 
             <div>
               <label className="block text-sm font-600 text-gray-700 mb-1.5">Company Phone</label>
-              <div className="relative">
-                <Phone size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input
-                  type="tel"
-                  className="admin-input pl-9"
-                  placeholder="(555) 247-8900"
-                  value={form.business_phone}
-                  onChange={(e) => update('business_phone', e.target.value)}
-                />
-              </div>
+              <input
+                type="tel"
+                className="admin-input"
+                placeholder="(555) 247-8900"
+                value={form.business_phone}
+                onChange={(e) => update('business_phone', e.target.value)}
+              />
             </div>
 
             <div>
               <label className="block text-sm font-600 text-gray-700 mb-1.5">Company Address</label>
-              <div className="relative">
-                <MapPin size={15} className="absolute left-3 top-3 text-gray-400" />
-                <textarea
-                  className="admin-input pl-9 resize-none"
-                  rows={2}
-                  placeholder="123 Main Street, Suite 100, City, State 12345"
-                  value={form.business_address}
-                  onChange={(e) => update('business_address', e.target.value)}
-                />
-              </div>
+              <textarea
+                className="admin-input resize-none"
+                rows={2}
+                placeholder="123 Main Street, Suite 100, City, State 12345"
+                value={form.business_address}
+                onChange={(e) => update('business_address', e.target.value)}
+              />
             </div>
           </div>
         </div>
@@ -212,19 +200,16 @@ export default function BusinessSettingsPage() {
               <p className="text-xs text-gray-400 mb-2">
                 How often booking time slots are generated. E.g. 30 = slots every 30 minutes.
               </p>
-              <div className="relative">
-                <Clock size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <select
-                  className="admin-select pl-9"
-                  value={form.slot_interval_minutes}
-                  onChange={(e) => update('slot_interval_minutes', Number(e.target.value))}
-                >
-                  <option value={15}>15 minutes</option>
-                  <option value={30}>30 minutes</option>
-                  <option value={45}>45 minutes</option>
-                  <option value={60}>60 minutes (1 hour)</option>
-                </select>
-              </div>
+              <select
+                className="admin-select"
+                value={form.slot_interval_minutes}
+                onChange={(e) => update('slot_interval_minutes', Number(e.target.value))}
+              >
+                <option value={15}>15 minutes</option>
+                <option value={30}>30 minutes</option>
+                <option value={45}>45 minutes</option>
+                <option value={60}>60 minutes (1 hour)</option>
+              </select>
             </div>
 
             <div>
@@ -234,21 +219,18 @@ export default function BusinessSettingsPage() {
               <p className="text-xs text-gray-400 mb-2">
                 Minimum hours in advance customers must book. E.g. 24 = no same-day bookings.
               </p>
-              <div className="relative">
-                <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <select
-                  className="admin-select pl-9"
-                  value={form.booking_notice_hours}
-                  onChange={(e) => update('booking_notice_hours', Number(e.target.value))}
-                >
-                  <option value={2}>2 hours</option>
-                  <option value={4}>4 hours</option>
-                  <option value={8}>8 hours</option>
-                  <option value={12}>12 hours</option>
-                  <option value={24}>24 hours (1 day)</option>
-                  <option value={48}>48 hours (2 days)</option>
-                </select>
-              </div>
+              <select
+                className="admin-select"
+                value={form.booking_notice_hours}
+                onChange={(e) => update('booking_notice_hours', Number(e.target.value))}
+              >
+                <option value={2}>2 hours</option>
+                <option value={4}>4 hours</option>
+                <option value={8}>8 hours</option>
+                <option value={12}>12 hours</option>
+                <option value={24}>24 hours (1 day)</option>
+                <option value={48}>48 hours (2 days)</option>
+              </select>
             </div>
 
             {/* Preview */}

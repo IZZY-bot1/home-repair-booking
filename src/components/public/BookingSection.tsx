@@ -29,6 +29,7 @@ interface Props {
   settings: BusinessSettings | null
   businessHours: BusinessHours[]
   blockedDates: BlockedDate[]
+  content?: Record<string, string>
 }
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -39,6 +40,7 @@ export default function BookingSection({
   settings,
   businessHours,
   blockedDates,
+  content = {},
 }: Props) {
   const [step, setStep] = useState<Step>(1)
   const [booking, setBooking] = useState<BookingData>({
@@ -196,11 +198,10 @@ export default function BookingSection({
               Online Booking
             </div>
             <h2 className="text-4xl sm:text-5xl font-800 text-navy-800 tracking-tight mb-3">
-              Book Your{' '}
-              <span className="text-gradient-brand">Home Repair</span>
+              {content.title || 'Book Your Home Repair'}
             </h2>
             <p className="text-base" style={{ color: '#8a7f76' }}>
-              Choose your service, pick a time, and we'll take care of the rest.
+              {content.subtitle || "Choose your service, pick a time, and we'll take care of the rest."}
             </p>
           </div>
         )}

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import {
-  LayoutDashboard, CalendarDays, Wrench, Clock, Ban, Settings, LogOut, X
+  LayoutDashboard, CalendarDays, Wrench, Clock, Ban, Settings, LogOut, X, PanelLeft
 } from 'lucide-react'
 import { supabase } from '../../lib/supabase'
 
@@ -16,6 +16,7 @@ const NAV_ITEMS = [
   { to: '/admin/services', icon: Wrench, label: 'Services' },
   { to: '/admin/business-hours', icon: Clock, label: 'Business Hours' },
   { to: '/admin/blocked-dates', icon: Ban, label: 'Blocked Dates' },
+  { to: '/admin/page-builder', icon: PanelLeft, label: 'Page Builder' },
   { to: '/admin/settings', icon: Settings, label: 'Settings' },
 ]
 

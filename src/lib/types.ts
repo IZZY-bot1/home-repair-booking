@@ -52,6 +52,15 @@ export interface BusinessSettings {
   created_at: string;
 }
 
+export interface PageContent {
+  id: string;
+  section_key: string;
+  is_visible: boolean;
+  sort_order: number;
+  content: Record<string, string>;
+  updated_at: string;
+}
+
 export interface TimeSlot {
   start: Date;
   end: Date;

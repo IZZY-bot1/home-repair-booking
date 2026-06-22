@@ -121,11 +121,14 @@ export default function BusinessSettingsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Business Info */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-9 h-9 rounded-xl bg-navy-50 flex items-center justify-center">
-              <Building2 size={16} style={{ color: '#1a2744' }} />
+          <div className="flex items-start gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-navy-50 flex items-center justify-center flex-shrink-0">
+              <Building2 size={18} style={{ color: '#1a2744' }} />
             </div>
-            <h3 className="font-700 text-gray-900">Business Information</h3>
+            <div>
+              <h3 className="font-700 text-gray-900 leading-tight">Business Information</h3>
+              <p className="text-xs text-gray-400 mt-0.5">Your company name, contact details, and address</p>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -191,11 +194,14 @@ export default function BusinessSettingsPage() {
 
         {/* Booking Settings */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-          <div className="flex items-center gap-2.5 mb-5">
-            <div className="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center">
-              <Calendar size={16} className="text-brand-500" />
+          <div className="flex items-start gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+              <Calendar size={18} className="text-brand-500" />
             </div>
-            <h3 className="font-700 text-gray-900">Booking Preferences</h3>
+            <div>
+              <h3 className="font-700 text-gray-900 leading-tight">Booking Preferences</h3>
+              <p className="text-xs text-gray-400 mt-0.5">Slot intervals and advance booking rules</p>
+            </div>
           </div>
 
           <div className="space-y-6">

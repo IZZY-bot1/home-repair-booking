@@ -23,11 +23,14 @@ export default function AdminDashboard() {
 
   const checkAdminAccess = async (userId: string) => {
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('admin_users')
-        .select('id')
+        .select('user_id')
         .eq('user_id', userId)
         .maybeSingle()
+
+      console.log('[Admin Check] userId:', userId)
+      console.log('[Admin Check] data:', data, 'error:', error)
 
       if (data) {
         // Load business name
@@ -39,9 +42,11 @@ export default function AdminDashboard() {
         if (settingsData?.business_name) setBusinessName(settingsData.business_name)
         setAuthState('authorized')
       } else {
+        console.log('[Admin Check] Not authorized — data was null/undefined')
         setAuthState('unauthorized')
       }
-    } catch {
+    } catch (err) {
+      console.error('[Admin Check] Exception:', err)
       setAuthState('unauthorized')
     }
   }

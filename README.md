@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# FixRight Home Repair — Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack home repair booking website with a public-facing booking flow and a secure admin dashboard. Customers book appointments through a guided wizard; admins manage services, hours, and appointments from a backend dashboard.
 
-Currently, two official plugins are available:
+🔗 Live site: <https://bookingsystem.digital>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React 19** + **TypeScript** + **Vite**
+- **Tailwind CSS v4** for styling
+- **Supabase** (Postgres + Auth + RLS) for data and authentication
+- **React Router** for routing
+- **date-fns** for date handling, **lucide-react** for icons
+- Deployed to **GitHub Pages** via `gh-pages`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+**Public website**
+- Premium hero section and dynamic services loaded from Supabase
+- 4-step booking wizard (service → date/time → details → confirmation)
+- Smart availability that respects business hours, blocked dates, existing bookings, and notice time
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Admin dashboard** (`/admin`)
+- Secure login via Supabase Auth + `admin_users` verification
+- Appointment overview and management with status updates
+- Manage services, business hours, blocked dates, and business settings
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Public website: <http://localhost:5173>
+- Admin dashboard: <http://localhost:5173/admin>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Configuring Supabase environment variables, setting up the database schema, and creating an admin user are covered in **[SETUP.md](SETUP.md)**.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Scripts
+
+| Command           | Description                                  |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Start the Vite dev server                    |
+| `npm run build`   | Type-check and build for production          |
+| `npm run preview` | Preview the production build locally         |
+| `npm run lint`    | Run ESLint                                   |
+| `npm run deploy`  | Build and deploy `dist/` to GitHub Pages     |
+
+## Project Structure
+
 ```
+src/
+  components/   Shared, public/, and admin/ UI components
+  pages/        Public pages and admin/ dashboard pages
+  lib/          Supabase client, images, and shared config
+  utils/        Helper utilities
+supabase/
+  schema.sql    Database tables, RLS policies, and RPC functions
+```
+
+See **[SETUP.md](SETUP.md)** for full setup and customization instructions.

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+  <title>Mail Filters — Inbox Cleanup (engalapag@gmail.com)</title>
+
+  <!-- 1. Urgent Action / Bills : label + archive, keep unread -->
+  <entry>
+    <category term='filter'></category>
+    <title>Urgent Action / Bills</title>
+    <content></content>
+    <apps:property name='from' value='americanexpress.com OR emails.creditonebank.com OR info6.citi.com OR notification.capitalone.com OR chase.com OR notify.wellsfargo.com OR synchronybank.com OR paypal.com OR affirm.com OR e.geico.com OR order-update@amazon.com OR auto-confirm@amazon.com OR shipment-tracking@amazon.com OR return@amazon.com OR help@walmart.com OR uber.com OR openrouter.ai OR vanguard.com OR macdiscount.com OR googleplay-noreply@google.com OR mail.anthropic.com'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='label' value='Urgent Action / Bills'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+  <!-- 2. Work / Client / Personal : label + archive, keep unread -->
+  <entry>
+    <category term='filter'></category>
+    <title>Work / Client / Personal</title>
+    <content></content>
+    <apps:property name='from' value='janinealapag@gmail.com OR chenega.com OR calendar-notification@google.com OR lifetimehoamanagement.com OR kairosit.com OR greenhouse-mail.io OR indeedapply@indeed.com OR cbp.dhs.gov'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='label' value='Work / Client / Personal'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+  <!-- 3. Newsletters & Promotions : label + archive + mark as read -->
+  <entry>
+    <category term='filter'></category>
+    <title>Newsletters &amp; Promotions</title>
+    <content></content>
+    <apps:property name='from' value='gooddog.com OR members.wayfair.com OR skool.com OR amazonmusic.com OR offers.creditonebank.com OR eautodealerhub.com OR searchlightpictures.com OR 20thcenturystudios.com OR d23.com OR att-mail.com OR ashanderie.com OR pdffiller.com OR canvasonthecheap.com OR easycanvasprint.com OR greenbacktaxservices.com OR points-mail.com OR campusespmail.com OR instaservice.com OR growth.twilio.com OR team.twilio.com OR notifications@stripe.com OR netlify.com OR teladochealth.com OR pendosurvey.com OR membershipmail.net OR no-reply@amazon.com OR info15.citi.com'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldMarkAsRead' value='true'/>
+    <apps:property name='label' value='Newsletters &amp; Promotions'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+  <!-- 4. Other : label + archive, keep unread -->
+  <entry>
+    <category term='filter'></category>
+    <title>Other</title>
+    <content></content>
+    <apps:property name='from' value='accounts.google.com OR github.com OR mg.gitlab.com OR notifications@vercel.com OR firebase-noreply@google.com OR firebase-no-reply@google.com OR googledev-noreply@google.com OR google-noreply@google.com OR families-noreply@google.com OR link.com OR no-reply@twilio.com OR notifications.t-mobile.com OR ismartlife.me OR gitpage.site OR web3forms.com OR huggingface.co OR netgear.com OR googlepay-noreply@google.com OR info.ebay.com'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='label' value='Other'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+</feed>
